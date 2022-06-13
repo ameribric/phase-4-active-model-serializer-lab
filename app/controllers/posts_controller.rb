@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     posts = Post.all
-    render json: posts
+    render json: posts, include: [:post.name, :post.tags]
   end
 
   def show
